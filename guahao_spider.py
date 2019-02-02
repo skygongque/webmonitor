@@ -7,12 +7,12 @@ import requests
 from requests.exceptions import RequestException
 import re
 from bs4 import BeautifulSoup
-#伪装浏览器
+
 headers = {
     'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
 }
 
-#获取网页源码
+
 def get_one_page(url):
     try:
         response = requests.get(url,headers = headers)
@@ -21,7 +21,7 @@ def get_one_page(url):
             return response
         return None
     except RequestException as e:
-        print('网络错误')
+        print('web error!')
         return None
 
 def parse_one_page(html):
@@ -32,7 +32,7 @@ def parse_one_page(html):
     empty = []
     now_time = time.strftime('%Y-%m-%d %X',time.localtime())
     if kyys == empty:
-        print('now:' + now_time + 'status:无号')
+        print('now:' + now_time + 'status:no_match')
     else:
         print('-----------------------------------------------------------')
         for kyy in kyys:
@@ -45,8 +45,6 @@ def parse_one_page(html):
             final3_count = re.search(r'\d\d|\d',temp2_count,re.M)
             if final3_count:
                 count = final3_count.group(0)
-            #print(count)
-            #print('now:'+ now_time +'有号日期：'+ date +'挂号费：'+fee)
             hospital_result = 'now:'+ now_time +'有号日期：'+ date + '剩余号数：'+ count
             print(hospital_result)
             with open('book_hospital_result.txt', 'a', encoding='utf-8') as f:
