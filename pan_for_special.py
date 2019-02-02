@@ -30,13 +30,13 @@ def parse_one_page(html):
     base = 'http://www.pan6.com/'
     link = base + ppra
     return link
-
+'''
 def get_score(html):    
     soup = BeautifulSoup(html, "lxml")
     score = soup.select('#psts > ul > li')[3]
     score_text =  score.text
-    print(score_text)
-    
+    #print(score_text)
+'''    
 
 
 def mark(url):
@@ -57,11 +57,12 @@ def main():
     link = parse_one_page(html.text)
     time.sleep(1)
     mark(link)
+    '''
     time.sleep(1)
     my_url = 'http://www.pan6.com/space-uid-307429.html'
     score_html = get_one_page(my_url)
     get_score(score_html.text)
-    
+    '''
     
         
    
