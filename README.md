@@ -4,7 +4,8 @@
     #备注：邮箱提醒需要用到stmp服务，填写账号和授权码
 
 # how to use
-运行环境：
+### 运行环境：
+
 1.windows 7，python3.7 ,pip3
 
 2.把python3和pip3配置在环境变量中
