@@ -2,6 +2,7 @@
 用于判断某挂号网站是否有剩余的号，如果有发邮件通知
 #备注：邮箱提醒需要用到stmp服务，填写账号和授权码
 
+# how to use
 运行环境：
 1.windows 7，python3.7
 2.pip相应的库，技术路线是requests+bs4，把基本的库如resquests，bs4，BeautifuSoup,re都装了吧
