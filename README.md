@@ -5,8 +5,11 @@
 
 # how to use
 运行环境：
-1.windows 7，python3.7
-2.pip相应的库，技术路线是requests+bs4
+1.windows 7，python3.7 ,pip3
+
+2.把python3和pip3配置在环境变量中
+
+3.出现model未定义的错误是可用'pip3'安装相应的库，比如安装requests和bs4的代码如下。
 
     pip3 install requests bs4
     
